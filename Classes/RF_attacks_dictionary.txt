@@ -1,0 +1,36 @@
+{
+    'RandomSamplerAttack': {
+        'class_name': 'RandomSamplerAttack',
+        'class_type': RandomSamplerAttack,
+        'hyperparameters': {
+            'targeted': [True],
+            'max_queries': [10000, 50000, 100000, 200000]
+        }
+    },
+    'BoundaryAttack': {
+        'class_name': 'BoundaryAttack',
+        'class_type': Boundary_new,
+        'hyperparameters': {
+            'targeted': [True],
+            'delta': [0.001, 0.01, 0.1],
+            'init_size': [10, 20],  # 50
+            'batch_size': [32, 64],
+            'epsilon': [0.001, 0.01, 0.1],
+            'max_iter': [10, 20, 30, 50],  # 100, 500
+            'num_trial': [10, 15, 20],  # , 20, 40
+            'sample_size': [5, 10, 20, 30]
+        }
+    },
+
+    'HopSkipJump': {
+        'class_name': 'HopSkipJump',
+        'class_type': HopSkipJump_new,
+        'hyperparameters': {
+            'max_iter': [10, 15, 20, 30],  # , 200, 1000
+            'max_eval': [15, 30],  # 50, 500, 1000 , 10000
+            'init_eval': [4, 8],  # , 40
+            'init_size': [5, 10, 20],  # , 100
+            'batch_size': [32, 64]
+        }
+    },
+ }
